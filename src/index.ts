@@ -1,6 +1,6 @@
 export const formatNumberToScientific = (
   original_value: number,
-  positions: number,
+  position: number,
 ): number => {
   const value = Number(original_value ?? 0);
 
@@ -8,26 +8,21 @@ export const formatNumberToScientific = (
   if (value === 0) {
     formattedValue = 0.00;
   } else {
-    //const formattedValue = value.toExponential(positions);
     if (value > 0 && value < 1) {
       //check the number of leading zeros after decimal point, if the number is 000, we want to convert the number to scientific notation
-      let leadingZeros = positions > 1 ? "0".repeat(positions - 2) : "0";
-      if (value.toFixed(positions).substring(2, positions) === leadingZeros) {       
-        formattedValue = parseFloat(value.toExponential(positions));
-        console.log("formatted value in scientific notation", formattedValue);
+      let leadingZeros = position > 1 ? "0".repeat(position - 2) : "0";
+      if (value.toFixed(position).substring(2, position) === leadingZeros) {       
+        formattedValue = parseFloat(value.toExponential(position));
         } else {
-        formattedValue = parseFloat(value.toFixed(positions));
+        formattedValue = parseFloat(value.toFixed(position));
       }
     } else if (value < 0) {
-        console.log("negative value less than 1", value);
         const decimalNumber = scientificToDecimal(value);
-        formattedValue = parseFloat(Number(decimalNumber).toExponential(positions));
+        formattedValue = parseFloat(Number(decimalNumber).toExponential(position));
     } else {
-        console.log("positive value greater than 1", value);
-        formattedValue = parseFloat(value.toFixed(positions));
+        formattedValue = parseFloat(value.toFixed(position));
       }
     }
-  console.log("final formatted value", formattedValue);
   return formattedValue;
 };
 
@@ -36,7 +31,6 @@ export const formatNumberToScientific = (
  * If the number is a minus(-) other wise always return 0
  */
 function scientificToDecimal(scientificNumber: number): string {
-  console.log("scientific number input", scientificNumber);
   const str = String(scientificNumber);
 
   // If it's not in scientific notation, just return as is
@@ -44,10 +38,8 @@ function scientificToDecimal(scientificNumber: number): string {
 
   // Split into coefficient and exponent
   const [coefficient = '', exponent = '0'] = str.toLowerCase().split('e');
-  // const exp = parseInt(exponent, 10);
   const exp = parseInt(exponent, 10);
 
-  // let [intPart, fracPart = ''] = coefficient.replace('-', '').split('.');
   let [intPart, fracPart = ''] = coefficient.replace('-', '').split('.');
 
   if (exp > 0) {
