@@ -1,0 +1,24 @@
+{
+  "name": "smart-decimal-format",
+  "version": "1.0.0",
+  "description": "Formats numbers to given  decimal places and automatically switches to scientific notation when values are too small to display meaningfully.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "dev": "tsc --watch && nodemon ./dist/index.js"
+  },
+  "author": "Buddhika Senevirathna <wmbjss85@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.0.10",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "ts-jest": "^29.4.6"
+  }
+}
