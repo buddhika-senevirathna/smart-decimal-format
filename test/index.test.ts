@@ -22,6 +22,8 @@ describe('formatNumberToScientific function', () => {
 
     test('should convert very small numbers to scientific notation', () => {
       expect(formatNumberToScientific(0.00000012445423423, 6)).toBe(1.244542e-7);
+      expect(formatNumberToScientific(0.00006485024300466282, 5)).toBe(0.00006);
+      expect(formatNumberToScientific(0.000016103466422456256, 5)).toBe(0.00001);
       expect(formatNumberToScientific(0.00056789, 3)).toBe(5.679e-4);
     });
   });
