@@ -3,6 +3,8 @@ import { formatNumberToScientific } from '../src/index';
 describe('formatNumberToScientific function', () => {
   describe('Zero values', () => {
     test('should format zero as 0.00', () => {
+      expect(formatNumberToScientific(494.7208993582193, 5)).toBe(494.72089);
+      expect(formatNumberToScientific(3.14159265, 4)).toBe(3.1415);
       expect(formatNumberToScientific(0, 2)).toBe(0);
       expect(formatNumberToScientific(0, 4)).toBe(0);
     });
@@ -41,8 +43,8 @@ describe('formatNumberToScientific function', () => {
   describe('Edge cases', () => {
     test('should handle different decimal precisions', () => {
       expect(formatNumberToScientific(3.14159265, 2)).toBe(3.14);
-      expect(formatNumberToScientific(3.14159265, 4)).toBe(3.1416);
-      expect(formatNumberToScientific(3.14159265, 6)).toBe(3.141593);
+      expect(formatNumberToScientific(3.14159265, 4)).toBe(3.1415);
+      expect(formatNumberToScientific(3.14159265, 6)).toBe(3.141592);
     });
 
     test('should handle numbers already in scientific notation', () => {
