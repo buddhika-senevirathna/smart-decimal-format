@@ -1,6 +1,6 @@
 {
   "name": "smart-decimal-format",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Formats numbers to given  decimal places and automatically switches to scientific notation when values are too small to display meaningfully.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
