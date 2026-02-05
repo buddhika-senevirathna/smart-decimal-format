@@ -10,12 +10,15 @@ export const formatNumberToScientific = (
   } else {
     if (value > 0 && value < 1) {
       //check the number of leading zeros after decimal point, if the number is 000, we want to convert the number to scientific notation
-      let leadingZeros = position > 1 ? "0".repeat(position - 2) : "0";
-      if (value.toFixed(position).substring(2, position) === leadingZeros) {       
-        formattedValue = parseFloat(value.toExponential(position));
+      let leadingZeros = position > 1 ? "0".repeat(position) : "0";
+      // to avoid floating point precision issues, we use toFixed with a high number of decimal places to get the correct number of leading zeros
+      const fixedStr = value.toFixed(50)
+      // get the number number of digits after decimal point to position the value is zero or greater than zero
+      if (fixedStr.split('.')[1].substring(0, position) === leadingZeros) {
+          formattedValue = parseFloat(value.toExponential(position));
         } else {
-        formattedValue = parseFloat(value.toFixed(position));
-      }
+          formattedValue = parseFloat("0." + fixedStr.split('.')[1].substring(0, position));
+        }
     } else if (value < 0) {
         const decimalNumber = scientificToDecimal(value);
         formattedValue = parseFloat(Number(decimalNumber).toExponential(position));
