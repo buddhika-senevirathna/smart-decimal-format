@@ -1,9 +1,10 @@
 {
   "name": "smart-decimal-format",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Formats numbers to given  decimal places and automatically switches to scientific notation when values are too small to display meaningfully.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "test": "jest",
     "build": "tsc",
@@ -12,13 +13,25 @@
   "author": "Buddhika Senevirathna <wmbjss85@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^25.0.10",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
     "@types/jest": "^30.0.0",
+    "@types/node": "^25.0.10",
     "jest": "^30.2.0",
     "nodemon": "^3.1.11",
-    "ts-jest": "^29.4.6"
-  }
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/buddhika-senevirathna/smart-decimal-format.git"
+  },
+  "keywords": [
+    "decimal", "format", "number", "scientific notation", "precision", "rounding", "small numbers", "large numbers", "utility"
+  ],
+  "bugs": {
+    "url": "https://github.com/buddhika-senevirathna/smart-decimal-format/issues"
+  },
+  "homepage": "https://github.com/buddhika-senevirathna/smart-decimal-format#readme"
 }

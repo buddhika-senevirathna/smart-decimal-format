@@ -1,0 +1,42 @@
+# Source files
+src/
+test/
+original.ts
+
+# Configuration files
+tsconfig.json
+jest.config.js
+.vscode/
+.idea/
+
+# Git files
+.git/
+.gitignore
+
+# Development files
+*.test.ts
+*.spec.ts
+coverage/
+.nyc_output/
+
+# Build files
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Key files
+key.txt
+
+# Docs (keep README in npm package)
+# README.md is included by default
+.github/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules
+node_modules/
