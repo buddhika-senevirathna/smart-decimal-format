@@ -20,5 +20,19 @@
     "jest": "^30.2.0",
     "nodemon": "^3.1.11",
     "ts-jest": "^29.4.6"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/buddhika-senevirathna/smart-decimal-format.git"
+  },
+  "keywords": [
+    "decimal", "format", "number", "scientific notation", "precision", "rounding", "small numbers", "large numbers", "utility"
+  ],
+  "bugs": {
+    "url": "https://github.com/buddhika-senevirathna/smart-decimal-format/issues"
+  },
+  "homepage": "https://github.com/buddhika-senevirathna/smart-decimal-format#readme"
 }
